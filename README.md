@@ -8,6 +8,7 @@
 Projekt z przedmiotu Bazy Danych realizowany jest w grupach dwuosobowych. Celem projektu jest **zaprojektowanie** oraz **implementacja** systemu bazodanowego na wylosowany przez grupę temat. Grupa ma prawo zmienić temat na inny, wybrany przez siebie, jednak nie może się on znajdować na zbiorczej liście.
 
 Test.
+Test2.
 
 ## Struktura projektu
 ```bash
