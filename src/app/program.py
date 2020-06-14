@@ -6,4 +6,19 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="", databas
 
 mycursor = mydb.cursor()
 
-functions.rejestracja_uzytkownika()
+print(("Co chcesz teraz zrobić? "))
+print("1 - obsluga uzytkownika")
+temp = input("Wpisz cyfre: ")
+
+if temp == "1":
+    print(("Co chcesz teraz zrobić? "))
+    print("1 - rejestracja uzytkownika")
+    temp = input("Wpisz cyfre: ")
+    if temp == "1":
+        functions.rejestracja_uzytkownika()
+    else:
+        print("bledny wybor")
+else:
+    print("bledny wybor")
+
+
