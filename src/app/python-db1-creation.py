@@ -1,9 +1,11 @@
 import mysql.connector
-mydb = mysql.connector.connect(host="localhost", user="root", passwd="")
+mydb = mysql.connector.connect(host="localhost", user="root", passwd="", database="trustnet")
 
 mycursor = mydb.cursor()
 
-mycursor.execute("Show databases")
+mycursor.execute("select nazwisko from uzytkownik;")
 
-for db in mycursor:
-    print(db)
+myresult = mycursor.fetchone()
+
+for row in myresult:
+    print(row)
