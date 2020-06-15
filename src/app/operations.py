@@ -17,3 +17,22 @@ def dodaj_firme(f_nazwa, f_branza, f_miasto, f_liczba_opinii, f_srednia):
    args = ("NULL", f_nazwa, f_branza, f_miasto, f_liczba_opinii, f_srednia)
    mycursor.execute(sql, args)
    mydb.commit()
+
+def dodawanie_opinii(o_liczba, o_opis, o_firma):
+    sql = "INSERT INTO opinie (id_opinia, liczba_gwiazdek, opis, firma_id)" \
+         "VALUES (%s, %s, %s, %s)"
+    args = ("NULL", o_liczba, o_opis, o_firma)
+    mycursor.execute(sql, args)
+    mydb.commit()
+
+def wyswietlanie_firm():
+    sql = "SELECT id_firma, nazwa, branza, miasto, liczba_opinii, srednia FROM firma"
+    mycursor.execute(sql)
+    temp=mycursor.fetchall()
+    for row in temp:
+        print(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+
+    mydb.commit()
+    mycursor.close()
+    mydb.close
+    # return temp

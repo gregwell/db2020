@@ -12,7 +12,23 @@ def menu():
     print("0 - wyjscie z programu")
     print("1 - obsluga uzytkownika")
     print("2 - obsluga firmy")
+    print("3 - dodaj opinie")
     temp = input("Wpisz cyfre: ")
+
+    if temp == "3":
+        print(("Co chcesz teraz zrobić? "))
+        print("0 - wyjscie z programu")
+        print("1 - dodawanie opinii")
+        temp = input("Wpisz cyfre: ")
+
+        if temp == "1":
+            functions.dodaj_opinie()
+            menu()
+        elif temp == "0":
+            sys.exit(0)
+        else:
+            print("bledny wybor")
+            menu()
 
     if temp == "2":
         print(("Co chcesz teraz zrobić? "))
