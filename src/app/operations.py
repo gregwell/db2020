@@ -19,8 +19,9 @@ def dodaj_firme(f_nazwa, f_branza, f_miasto, f_liczba_opinii, f_srednia):
    mydb.commit()
 
 def dodawanie_opinii(o_liczba, o_opis, o_firma):
-    sql = "INSERT INTO opinie (id_opinia, liczba_gwiazdek, opis, firma_id)" \
-         "VALUES (%s, %d, %s, %d)"
+    mycursor = mydb.cursor()
+    sql = "INSERT INTO opinie (id_opinia, liczba_gwiazdek, opis, FirmaID)" \
+         "VALUES (%s, %s, %s, %s)"
     args = ("NULL", o_liczba, o_opis, o_firma)
     mycursor.execute(sql, args)
     mydb.commit()
