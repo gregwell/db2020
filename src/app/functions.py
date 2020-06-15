@@ -25,7 +25,7 @@ def dodaj_opinie():
     print("Podaj ocene od 1-5")
     while 1:
         liczba_gwiazdek = input()
-        if liczba_gwiazdek >= 1 and liczba_gwiazdek <= 5:
+        if int(liczba_gwiazdek) >= 1 and int(liczba_gwiazdek) <= 5:
             break
         else:
             print("Ocena poza skala")

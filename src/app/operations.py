@@ -20,7 +20,7 @@ def dodaj_firme(f_nazwa, f_branza, f_miasto, f_liczba_opinii, f_srednia):
 
 def dodawanie_opinii(o_liczba, o_opis, o_firma):
     sql = "INSERT INTO opinie (id_opinia, liczba_gwiazdek, opis, firma_id)" \
-         "VALUES (%s, %s, %s, %s)"
+         "VALUES (%s, %d, %s, %d)"
     args = ("NULL", o_liczba, o_opis, o_firma)
     mycursor.execute(sql, args)
     mydb.commit()
