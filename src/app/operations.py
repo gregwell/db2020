@@ -30,7 +30,7 @@ def wyswietlanie_firm():
     mycursor.execute(sql)
     temp=mycursor.fetchall()
     for row in temp:
-        print(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+        print(row[0], row[1])
 
     mydb.commit()
     mycursor.close()

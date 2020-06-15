@@ -19,7 +19,7 @@ def dodawanie_firmy():
 
 def dodaj_opinie():
     print("Oto firmy istniejace w naszej bazie, wybierz interesujaca Cie: ")
-    operations.wywietlanie_firm()
+    operations.wyswietlanie_firm()
 
     firma_id = input("Podaj id firmy sposrob wyswietlonych")
     print("Podaj ocene od 1-5")
