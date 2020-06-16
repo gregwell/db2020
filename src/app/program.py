@@ -8,6 +8,8 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="", databas
 mycursor = mydb.cursor()
 
 def menu():
+
+
     print(("Co chcesz teraz zrobić? "))
     print("0 - wyjscie z programu")
     print("1 - obsluga uzytkownika")

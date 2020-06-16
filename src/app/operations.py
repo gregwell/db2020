@@ -4,10 +4,10 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="", databas
 
 mycursor = mydb.cursor()
 
-def dodaj_uzytkownika(t_imie, t_nazwisko):
-   sql = "INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko)" \
-         "VALUES (%s, %s, %s)"
-   args = ("NULL", t_imie, t_nazwisko)
+def dodaj_uzytkownika(t_imie, t_nazwisko, t_login, t_haslo):
+   sql = "INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko, login, haslo)" \
+         "VALUES (%s, %s, %s, %s, %s)"
+   args = ("NULL", t_imie, t_nazwisko, t_login, t_haslo)
    mycursor.execute(sql, args)
    mydb.commit()
 

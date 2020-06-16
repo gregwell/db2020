@@ -3,9 +3,11 @@ from src.app import operations
 
 def rejestracja_uzytkownika():
     imie = input("Podaj imie: ")
-    nazwisko = input("Podaj imie: ")
+    nazwisko = input("Podaj nazwisko: ")
+    login = input("Podaj login: ")
+    haslo = input("Podaj haslo: ")
 
-    operations.dodaj_uzytkownika(imie, nazwisko)
+    operations.dodaj_uzytkownika(imie, nazwisko, login, haslo)
 
 def dodawanie_firmy():
     nazwa = input("Podaj nazwe firmy: ")
