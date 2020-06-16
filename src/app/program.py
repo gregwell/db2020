@@ -9,7 +9,7 @@ mycursor = mydb.cursor()
 
 def menu():
 
-
+    functions.zaloguj()
     print(("Co chcesz teraz zrobić? "))
     print("0 - wyjscie z programu")
     print("1 - obsluga uzytkownika")

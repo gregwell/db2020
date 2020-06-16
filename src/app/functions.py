@@ -33,3 +33,14 @@ def dodaj_opinie():
             print("Ocena poza skala")
     opinia = input("Dodaj opis opinii")
     operations.dodawanie_opinii(liczba_gwiazdek, opinia, firma_id)
+
+def zaloguj():
+    print("Zaloguj sie: ")
+    while 1:
+        login = input("Podaj login ")
+        haslo = input("Podaj haslo ")
+        iduzytkownika = operations.logowanie(str(login), str(haslo))
+        if (iduzytkownika is not None):
+            break
+        else:
+            print("Bledne dane, sprobuj jeszcze raz")

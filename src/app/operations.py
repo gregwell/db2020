@@ -49,4 +49,19 @@ def ranking_fryzjerow():
 
     mydb.commit()
     mycursor.close()
-    mydb.close
+
+
+def logowanie(l_login, l_haslo):
+    # temp = l_login
+    # temp2= l_haslo
+    sql = "SELECT id_uzytkownik FROM uzytkownik WHERE login = %s AND haslo = %s"
+    args = (str(l_login), str(l_haslo),)
+    mycursor.execute(sql, args)
+    # id to zmienna majaca w sobie informacje o osobie zalogowanej w naszym programie. Za kazdym razem nadpisywana.
+    iduzytkownika = mycursor.fetchone()
+    mydb.commit()
+    mycursor.close()
+
+    return iduzytkownika
+
+    # mydb.close
