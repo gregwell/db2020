@@ -27,7 +27,7 @@ def dodawanie_opinii(o_liczba, o_opis, o_firma):
     mydb.commit()
 
 def wyswietlanie_firm():
-    sql = "SELECT id_firma, nazwa, branza, miasto, liczba_opinii, srednia FROM firma"
+    sql = "SELECT id_firma, nazwa, branza, miasto FROM firma"
     mycursor.execute(sql)
     temp=mycursor.fetchall()
     for row in temp:
