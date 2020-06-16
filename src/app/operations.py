@@ -35,5 +35,18 @@ def wyswietlanie_firm():
 
     mydb.commit()
     mycursor.close()
-    mydb.close
+    # mydb.close
     # return temp
+
+
+# tu mozna dodac zeby z user input wybierac branze
+def ranking_fryzjerow():
+    sql = "SELECT nazwa, AVG(liczba_gwiazdek) FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE firma.branza='Fryzjer' GROUP BY nazwa ORDER BY liczba_gwiazdek DESC"
+    mycursor.execute(sql)
+    temp=mycursor.fetchall()
+    for row in temp:
+        print(row[0], row[1])
+
+    mydb.commit()
+    mycursor.close()
+    mydb.close

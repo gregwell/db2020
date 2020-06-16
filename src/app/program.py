@@ -13,7 +13,24 @@ def menu():
     print("1 - obsluga uzytkownika")
     print("2 - obsluga firmy")
     print("3 - dodaj opinie")
+    print("4 - rankingi i statystyki")
     temp = input("Wpisz cyfre: ")
+
+    if temp == "4":
+        print(("Co chcesz teraz zrobić? "))
+        print("0 - wyjscie z programu")
+        print("1 - wyswietl ranking fryzjerow")
+        temp = input("Wpisz cyfre: ")
+
+        if temp == "1":
+            operations.ranking_fryzjerow()
+            menu()
+        elif temp == "0":
+            sys.exit(0)
+        else:
+            print("bledny wybor")
+            menu()
+
 
     if temp == "3":
         print(("Co chcesz teraz zrobić? "))
