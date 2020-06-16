@@ -15,17 +15,21 @@ def menu():
     print("1 - obsluga uzytkownika")
     print("2 - obsluga firmy")
     print("3 - dodaj opinie")
-    print("4 - rankingi i statystyki")
+    print("4 - przegladaj opinie i rankingi")
     temp = input("Wpisz cyfre: ")
 
     if temp == "4":
         print(("Co chcesz teraz zrobić? "))
         print("0 - wyjscie z programu")
-        print("1 - wyswietl ranking fryzjerow")
+        print("1 - przegladaj opinie o wybranej firmie")
+        print("2 - wyswietl ranking fryzjerow")
         temp = input("Wpisz cyfre: ")
 
-        if temp == "1":
+        if temp == "2":
             operations.ranking_fryzjerow()
+            menu()
+        elif temp == "1":
+            functions.przegladaj_opinie()
             menu()
         elif temp == "0":
             sys.exit(0)

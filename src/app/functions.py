@@ -33,3 +33,9 @@ def dodaj_opinie():
             print("Ocena poza skala")
     opinia = input("Dodaj opis opinii")
     operations.dodawanie_opinii(liczba_gwiazdek, opinia, firma_id)
+
+def przegladaj_opinie():
+    print("Oto firmy istniejace w naszej bazie, wybierz interesujaca Cie: ")
+    operations.wyswietlanie_firm()
+    id_firma_id = input("Podaj id firmy sposrob wyswietlonych")
+    operations.wyswietlanie_opinii(id_firma_id)
