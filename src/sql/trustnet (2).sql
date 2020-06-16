@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2020 at 10:05 PM
+-- Generation Time: Jun 16, 2020 at 10:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -31,20 +31,19 @@ CREATE TABLE `firma` (
   `id_firma` int(11) NOT NULL,
   `nazwa` text COLLATE utf8_polish_ci NOT NULL,
   `branza` text COLLATE utf8_polish_ci NOT NULL,
-  `miasto` text COLLATE utf8_polish_ci NOT NULL,
-  `liczba_opinii` int(11) NOT NULL,
-  `srednia` double NOT NULL
+  `miasto` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Dumping data for table `firma`
 --
 
-INSERT INTO `firma` (`id_firma`, `nazwa`, `branza`, `miasto`, `liczba_opinii`, `srednia`) VALUES
-(1, 'jan grzegorz trzeci glowice', 'janice pawlice', 'janów lubelski', 0, 0),
-(2, 'Janek Podolski uslugi', 'Fryzjer', 'Krakow', 0, 0),
-(4, 'Hej sokoly firma handlowa', 'Gastronomia', 'Krakow', 0, 0),
-(5, 'Fryzjerstwo u mnie i Spolki', 'Fryzjer', 'Krakow', 0, 0);
+INSERT INTO `firma` (`id_firma`, `nazwa`, `branza`, `miasto`) VALUES
+(1, 'jan grzegorz trzeci glowice', 'janice pawlice', 'janów lubelski'),
+(2, 'Janek Podolski uslugi', 'Fryzjer', 'Krakow'),
+(4, 'Hej sokoly firma handlowa', 'Gastronomia', 'Krakow'),
+(5, 'Fryzjerstwo u mnie i Spolki', 'Fryzjer', 'Krakow'),
+(6, 'Jan-POL', 'Katalizatory', 'Mdlawice Slaskie');
 
 -- --------------------------------------------------------
 
@@ -141,7 +140,7 @@ ALTER TABLE `uzytkownik`
 -- AUTO_INCREMENT for table `firma`
 --
 ALTER TABLE `firma`
-  MODIFY `id_firma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_firma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `opinie`

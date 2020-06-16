@@ -11,10 +11,10 @@ def dodaj_uzytkownika(t_imie, t_nazwisko):
    mycursor.execute(sql, args)
    mydb.commit()
 
-def dodaj_firme(f_nazwa, f_branza, f_miasto, f_liczba_opinii, f_srednia):
-   sql = "INSERT INTO firma (id_firma, nazwa, branza, miasto, liczba_opinii, srednia)" \
-         "VALUES (%s, %s, %s, %s, %s, %s)"
-   args = ("NULL", f_nazwa, f_branza, f_miasto, f_liczba_opinii, f_srednia)
+def dodaj_firme(f_nazwa, f_branza, f_miasto):
+   sql = "INSERT INTO firma (id_firma, nazwa, branza, miasto)" \
+         "VALUES (%s, %s, %s, %s)"
+   args = ("NULL", f_nazwa, f_branza, f_miasto)
    mycursor.execute(sql, args)
    mydb.commit()
 

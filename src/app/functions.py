@@ -14,7 +14,7 @@ def dodawanie_firmy():
     liczba_opinii = "0"
     srednia = "0"
 
-    operations.dodaj_firme(nazwa, branza, miasto, liczba_opinii, srednia)
+    operations.dodaj_firme(nazwa, branza, miasto)
 
 
 def dodaj_opinie():

@@ -1,4 +1,5 @@
 #1. Dodawanie do bazy uzytkownikow
+INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko) VALUES (%s, %s, %s)
 
 #2. Dodawanie do bazy firm
 
