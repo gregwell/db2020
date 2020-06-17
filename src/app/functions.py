@@ -57,3 +57,7 @@ def wyswietl_ranking():
     operations.wyswietlanie_branz()
     branza= input("Podaj branze do przegladniecia opinii")
     operations.ranking_fryzjerow(branza)
+
+def wyswietl_moje_opinie(iduzytkownika):
+    print("Moje opinie: [ocena, opis, nazwa firmy]")
+    operations.moje_opinie(iduzytkownika)

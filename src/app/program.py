@@ -82,12 +82,16 @@ def menu():
         print(("Co chcesz teraz zrobić? "))
         print("0 - wyjscie z programu")
         print("1 - rejestracja uzytkownika")
+        print("2 - pokaz moje opinie ")
         temp = input("Wpisz cyfre: ")
         if temp == "1":
             functions.rejestracja_uzytkownika()
             menu()
         elif temp == "0":
             sys.exit(0)
+        elif temp == "2":
+            functions.wyswietl_moje_opinie(iduzytkownika)
+            menu()
         else:
             print("bledny wybor")
             menu()

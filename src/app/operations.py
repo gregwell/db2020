@@ -88,3 +88,14 @@ def wyswietlanie_branz():
 
     mydb.commit()
     mycursor.close()
+
+def moje_opinie(iduzytkownika):
+    mycursor = mydb.cursor()
+    sql = 'SELECT opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE opinie.UzytkownikID = %s'
+    mycursor.execute(sql, iduzytkownika,)
+    temp = mycursor.fetchall()
+    for row in temp:
+        print(row[0], row[1], row[2])
+
+    mydb.commit()
+    mycursor.close()

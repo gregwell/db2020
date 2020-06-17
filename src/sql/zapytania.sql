@@ -5,7 +5,7 @@ INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko, login, haslo) VALUES (%s,
 INSERT INTO firma (id_firma, nazwa, branza, miasto) VALUES (%s, %s, %s, %s)
 
 #3. Dodawanie opinii do bazy odnosnie konkretnej firmy przez konkretnego uzytkownika
-INSERT INTO opinie (id_opinia, liczba_gwiazdek, opis, FirmaID) VALUES (%s, %s, %s, %s)
+INSERT INTO opinie (id_opinia, liczba_gwiazdek, opis, FirmaID, UzytkownikID) VALUES (%s, %s, %s, %s, %s)
 
 #4. Pokazywanie detali firmy
 SELECT id_firma, nazwa, branza, miasto, liczba_opinii, srednia FROM firma
