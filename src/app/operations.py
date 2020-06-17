@@ -88,3 +88,11 @@ def wyswietlanie_branz():
 
     mydb.commit()
     mycursor.close()
+
+def usuwanie_firmy(idfirma):
+    mycursor = mydb.cursor()
+    sql = "DELETE FROM firma WHERE id_firma = %s"
+    args = (str(idfirma),)
+    mycursor.execute(sql, args)
+    mydb.commit()
+    mycursor.close()

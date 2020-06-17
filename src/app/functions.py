@@ -57,3 +57,9 @@ def wyswietl_ranking():
     operations.wyswietlanie_branz()
     branza= input("Podaj branze do przegladniecia opinii")
     operations.ranking_fryzjerow(branza)
+
+def usun_firme():
+    print("Wybierz id firmy, ktora chcesz usunac")
+    operations.wyswietlanie_firm()
+    idfirmy=input("Podaj id firmy: ")
+    operations.usuwanie_firmy(idfirmy)
