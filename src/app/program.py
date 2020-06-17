@@ -23,7 +23,7 @@ def menu():
     print("0 - wyjscie z programu")
     print("1 - obsluga uzytkownika")
     print("2 - obsluga firmy")
-    print("3 - dodaj opinie")
+    print("3 - opinie")
     print("4 - przegladaj opinie i rankingi")
     temp = input("Wpisz cyfre: ")
 
@@ -51,10 +51,16 @@ def menu():
         print(("Co chcesz teraz zrobić? "))
         print("0 - wyjscie z programu")
         print("1 - dodawanie opinii")
+        print("2 - edytuj opinie")
         temp = input("Wpisz cyfre: ")
 
         if temp == "1":
             functions.dodaj_opinie(iduzytkownika)
+            menu()
+        if temp == "2":
+            print("Oto twoje opinie, wybierz id opinii, ktora chcesz zmienic")
+            functions.wyswietl_moje_opinie(iduzytkownika)
+            functions.edytuj_opinie()
             menu()
         elif temp == "0":
             sys.exit(0)
