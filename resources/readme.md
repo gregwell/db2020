@@ -1,4 +1,4 @@
-# Salon samochodowy
+# Trustnet
 
 | Nazwisko i imię| Kierunek          | Przedmiot   | Semestr | Rok akademicki |
 | Grzegorz Studziński   | Informatyka WiMiIP | Bazy danych | 4		 | 2019/2020      |
