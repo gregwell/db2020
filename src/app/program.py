@@ -32,6 +32,7 @@ def menu():
         print("0 - wyjscie z programu")
         print("1 - przegladaj opinie o wybranej firmie")
         print("2 - wyswietl ranking fryzjerow")
+        print("3 - przegladaj opinie z opisem")
         temp = input("Wpisz cyfre: ")
 
         if temp == "2":
@@ -39,6 +40,9 @@ def menu():
             menu()
         elif temp == "1":
             functions.przegladaj_opinie()
+            menu()
+        elif temp == '3':
+            functions.wyswietl_opinie_opis(iduzytkownika)
             menu()
         elif temp == "0":
             sys.exit(0)
