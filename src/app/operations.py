@@ -27,6 +27,7 @@ def dodawanie_opinii(o_liczba, o_opis, o_firma):
     mydb.commit()
 
 def wyswietlanie_firm():
+    mycursor = mydb.cursor()
     sql = "SELECT id_firma, nazwa, branza, miasto FROM firma"
     mycursor.execute(sql)
     temp=mycursor.fetchall()
@@ -61,6 +62,7 @@ def ranking_fryzjerow():
     mydb.commit()
 
 def logowanie(l_login, l_haslo):
+    mycursor = mydb.cursor()
     # temp = l_login
     # temp2= l_haslo
     sql = "SELECT id_uzytkownik FROM uzytkownik WHERE login = %s AND haslo = %s"

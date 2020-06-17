@@ -1,5 +1,5 @@
 #1. Dodawanie do bazy uzytkownikow
-INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko) VALUES (%s, %s, %s)
+INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko, login, haslo) VALUES (%s, %s, %s, %s, %s)
 
 #2. Dodawanie do bazy firm
 INSERT INTO firma (id_firma, nazwa, branza, miasto) VALUES (%s, %s, %s, %s)
@@ -15,3 +15,6 @@ SELECT nazwa, AVG(liczba_gwiazdek) FROM opinie INNER JOIN firma ON opinie.FirmaI
 
 #6. Wyswietlanie opinii
 SELECT opis, liczba_gwiazdek FROM opinie WHERE FirmaID = %s
+
+#6. Logowanie
+SELECT id_uzytkownik FROM uzytkownik WHERE login = %s AND haslo = %s
