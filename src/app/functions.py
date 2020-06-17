@@ -61,3 +61,9 @@ def wyswietl_ranking():
 def wyswietl_moje_opinie(iduzytkownika):
     print("Moje opinie: [ocena, opis, nazwa firmy]")
     operations.moje_opinie(iduzytkownika)
+
+def usun_firme():
+    print("Wybierz id firmy, ktora chcesz usunac")
+    operations.wyswietlanie_firm()
+    idfirmy=input("Podaj id firmy: ")
+    operations.usuwanie_firmy(idfirmy)

@@ -8,7 +8,6 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="", databas
 mycursor = mydb.cursor()
 
 def menu():
-
     print("Zaloguj sie: ")
     while 1:
         login = input("Podaj login ")
@@ -67,6 +66,7 @@ def menu():
         print(("Co chcesz teraz zrobić? "))
         print("0 - wyjscie z programu")
         print("1 - dodawanie firmy")
+        print("2 - usuwanie firmy")
         temp = input("Wpisz cyfre: ")
 
         if temp == "1":
@@ -74,6 +74,9 @@ def menu():
             menu()
         elif temp == "0":
             sys.exit(0)
+        elif temp =="2":
+            functions.usun_firme()
+            menu()
         else:
             print("bledny wybor")
             menu()
