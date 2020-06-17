@@ -130,14 +130,14 @@ def edytuj_o(ido, opis, gwiazdki):
     mydb.commit()
     mycursor.close()
 
-def wyswietl_opinie_opis(idf, idu):
-    mycursor = mydb.cursor()
-    sql = 'SELECT opinie.opis, opinie.liczba_gwiazdek, uzytkownik.login FROM opinie INNER JOIN uzytkownik WHERE opinie.opis IS NOT NULL AND opinie.FirmaID = %s AND opinie.UzytkownikID = %s AND uzytkownik.id_uzytkownik = %s'
-    args = (str(idf), str(idu), str(idu),)
-    mycursor.execute(sql, args)
-    temp = mycursor.fetchall()
-    for row in temp:
-        print(row[0], row[1])
-
-    mydb.commit()
-    mycursor.close()
+# def wyswietl_opinie_opis(idf, idu):
+#     mycursor = mydb.cursor()
+#     sql = 'SELECT opinie.opis, opinie.liczba_gwiazdek, uzytkownik.login FROM opinie INNER JOIN uzytkownik WHERE opinie.opis IS NOT NULL AND opinie.FirmaID = %s AND opinie.UzytkownikID = %s'
+#     args = (str(idf), str(idu), str(idu),)
+#     mycursor.execute(sql, args)
+#     temp = mycursor.fetchall()
+#     for row in temp:
+#         print(row[0], row[1])
+#
+#     mydb.commit()
+#     mycursor.close()

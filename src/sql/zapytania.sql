@@ -25,7 +25,7 @@ SELECT branza FROM firma
 #9. Wyswietlanie wszystkich opinii zalogowanego uzytkownika
 SELECT opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE opinie.UzytkownikID = %s
 
-#10. Usuwanie opinii
+#10. Usuwanie firmy
 DELETE FROM firma WHERE id_firma = %s
 
 #11. Edycja opinii
@@ -33,3 +33,6 @@ UPDATE opinie SET opis = %s, liczba_gwiazdek = %s WHERE id_opinia = %s
 
 #12. Ranking uzytkownikow kto dodal najwiecej opinii
 SELECT `UzytkownikID`, COUNT(UzytkownikID) AS `liczba opinii tego uzytkownika` FROM `opinie` GROUP BY `UzytkownikID` ORDER BY `liczba opinii tego uzytkownika` DESC
+
+-- #13. Wyswietlanie opinii firmy, w ktorej istnieje opis
+-- SELECT opinie.opis, opinie.liczba_gwiazdek, uzytkownik.login FROM opinie INNER JOIN uzytkownik WHERE opinie.opis IS NOT NULL AND opinie.FirmaID = %s AND opinie.UzytkownikID = %s'' ||
