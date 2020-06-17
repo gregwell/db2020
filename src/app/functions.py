@@ -73,3 +73,9 @@ def edytuj_opinie():
     opis = input("Prosze podac nowy opis")
     gwiazdki = input("Prosze podac nowa liczbe gwiazdek")
     operations.edytuj_o(ido, opis, gwiazdki)
+
+def wyswietl_opinie_opis(iduzytkownika):
+    print("Oto firmy istniejace w naszej bazie, wybierz interesujaca Cie: ")
+    operations.wyswietlanie_firm()
+    idf = input("Podaj id firmy sposrob wyswietlonych")
+    operations.wyswietl_opinie_opis(idf, iduzytkownika)

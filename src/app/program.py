@@ -31,14 +31,18 @@ def menu():
         print(("Co chcesz teraz zrobić? "))
         print("0 - wyjscie z programu")
         print("1 - przegladaj opinie o wybranej firmie")
-        print("2 - wyswietl ranking fryzjerow")
+        print("2 - przegladaj opinie tylko z opisem o wybranej firmie")
+        print("3 - wyswietl ranking fryzjerow")
         temp = input("Wpisz cyfre: ")
 
-        if temp == "2":
+        if temp == "3":
             functions.wyswietl_ranking()
             menu()
         elif temp == "1":
             functions.przegladaj_opinie()
+            menu()
+        elif temp == "2":
+            functions.wyswietl_opinie_opis(iduzytkownika)
             menu()
         elif temp == "0":
             sys.exit(0)
