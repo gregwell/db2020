@@ -108,6 +108,20 @@ def usuwanie_firmy(idfirma):
     mydb.commit()
     mycursor.close()
 
+def ranking_uzytkownikow():
+    mycursor = mydb.cursor()
+    sql = "SELECT `UzytkownikID`, COUNT(UzytkownikID) AS `liczba opinii tego uzytkownika` FROM `opinie` GROUP BY `UzytkownikID` ORDER BY `liczba opinii tego uzytkownika` DESC"
+    mycursor.execute(sql)
+    temp=mycursor.fetchall()
+    i=1
+    for row in temp:
+        print(str(i)+" miejsce... ID uzytkownika:"+str(row[0]))
+        print("             liczba opinii:"+str(row[1]))
+        print("")
+        i=i+1
+    mydb.commit()
+
+
 def edytuj_o(ido, opis, gwiazdki):
     mycursor = mydb.cursor()
     sql = "UPDATE opinie SET opis = %s, liczba_gwiazdek = %s WHERE id_opinia = %s"

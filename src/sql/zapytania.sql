@@ -22,5 +22,13 @@ SELECT id_uzytkownik FROM uzytkownik WHERE login = %s AND haslo = %s
 #8. Wyswietlanie branz
 SELECT branza FROM firma
 
+#9. Wyswietlanie wszystkich opinii zalogowanego uzytkownika
+SELECT opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE opinie.UzytkownikID = %s
 
+#10. Usuwanie opinii
+DELETE FROM firma WHERE id_firma = %s
 
+#11. Edycja opinii
+
+#12. Ranking uzytkownikow kto dodal najwiecej opinii
+SELECT `UzytkownikID`, COUNT(UzytkownikID) AS `liczba opinii tego uzytkownika` FROM `opinie` GROUP BY `UzytkownikID` ORDER BY `liczba opinii tego uzytkownika` DESC
