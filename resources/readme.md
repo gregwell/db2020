@@ -3,8 +3,8 @@
 
 | Nazwisko i imię | Wydział | Kierunek | Semestr | Grupa | Rok akademicki |
 | :-------------: | :-----: | :------: | :-----: | :---: | :------------: |
-| Grzegorz Studziński         | WIMiIP  | IS       |   4     | 1     | 2019/2020      |
-| Michał Stawarski         | WIMiIP  | IS       |   4     | 1     | 2019/2020      |
+| Grzegorz Studziński         | WIMiIP  | IS       |   4     | 4     | 2019/2020      |
+| Michał Stawarski         | WIMiIP  | IS       |   4     | 4     | 2019/2020      |
 
 ## Struktura projektu
 ```bash
