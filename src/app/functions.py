@@ -67,3 +67,4 @@ def usun_firme():
     operations.wyswietlanie_firm()
     idfirmy=input("Podaj id firmy: ")
     operations.usuwanie_firmy(idfirmy)
+
