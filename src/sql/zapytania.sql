@@ -29,6 +29,7 @@ SELECT opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN f
 DELETE FROM firma WHERE id_firma = %s
 
 #11. Edycja opinii
+UPDATE opinie SET opis = %s, liczba_gwiazdek = %s WHERE id_opinia = %s
 
 #12. Ranking uzytkownikow kto dodal najwiecej opinii
 SELECT `UzytkownikID`, COUNT(UzytkownikID) AS `liczba opinii tego uzytkownika` FROM `opinie` GROUP BY `UzytkownikID` ORDER BY `liczba opinii tego uzytkownika` DESC
