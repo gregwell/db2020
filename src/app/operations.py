@@ -42,7 +42,7 @@ def wyswietlanie_firm():
 def wyswietlanie_opinii(idfirmy):
     mycursor = mydb.cursor()
     print(idfirmy)
-    sql = 'SELECT opis, liczba_gwiazdek FROM opinie WHERE FirmaID = %s'
+    sql = 'SELECT opis, liczba_gwiazdek FROM opinie WHERE FirmaID = %s ORDER BY liczba_gwiazdek ASC'
     args = (idfirmy,)
     mycursor.execute(sql, args)
     temp = mycursor.fetchall()
