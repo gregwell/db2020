@@ -50,3 +50,9 @@ def zaloguj():
             break
         else:
             print("Bledne dane, sprobuj jeszcze raz")
+
+def wyswietl_ranking():
+    print("Oto firmy istniejace w naszej bazie, wybierz interesujaca Cie: ")
+    operations.wyswietlanie_branz()
+    branza= input("Podaj branze do przegladniecia opinii")
+    operations.ranking_fryzjerow(branza)

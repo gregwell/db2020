@@ -26,7 +26,7 @@ def menu():
         temp = input("Wpisz cyfre: ")
 
         if temp == "2":
-            operations.ranking_fryzjerow()
+            functions.wyswietl_ranking()
             menu()
         elif temp == "1":
             functions.przegladaj_opinie()

@@ -53,9 +53,10 @@ def wyswietlanie_opinii(idfirmy):
     mycursor.close()
 
 # tu mozna dodac zeby z user input wybierac branze
-def ranking_fryzjerow():
-    sql = "SELECT nazwa, AVG(liczba_gwiazdek) FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE firma.branza='Fryzjer' GROUP BY nazwa ORDER BY liczba_gwiazdek DESC"
-    mycursor.execute(sql)
+def ranking_fryzjerow(branza):
+    sql = "SELECT nazwa, AVG(liczba_gwiazdek) FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE firma.branza = %s GROUP BY nazwa ORDER BY liczba_gwiazdek DESC"
+    args = (branza,)
+    mycursor.execute(sql, args)
     temp=mycursor.fetchall()
     for row in temp:
         print(row[0], row[1])
@@ -76,3 +77,14 @@ def logowanie(l_login, l_haslo):
     return iduzytkownika
 
     # mydb.close
+
+def wyswietlanie_branz():
+    mycursor = mydb.cursor()
+    sql = "SELECT branza FROM firma"
+    mycursor.execute(sql)
+    temp=mycursor.fetchall()
+    for row in temp:
+        print(row[0])
+
+    mydb.commit()
+    mycursor.close()
