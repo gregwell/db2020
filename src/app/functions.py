@@ -19,7 +19,7 @@ def dodawanie_firmy():
     operations.dodaj_firme(nazwa, branza, miasto)
 
 
-def dodaj_opinie():
+def dodaj_opinie(iduzytkownika):
     print("Oto firmy istniejace w naszej bazie, wybierz interesujaca Cie: ")
     operations.wyswietlanie_firm()
 
@@ -32,7 +32,8 @@ def dodaj_opinie():
         else:
             print("Ocena poza skala")
     opinia = input("Dodaj opis opinii")
-    operations.dodawanie_opinii(liczba_gwiazdek, opinia, firma_id)
+    iduzytkownika_temp = iduzytkownika
+    operations.dodawanie_opinii(liczba_gwiazdek, opinia, firma_id, iduzytkownika_temp)
 
 def przegladaj_opinie():
     print("Oto firmy istniejace w naszej bazie, wybierz interesujaca Cie: ")
@@ -40,16 +41,16 @@ def przegladaj_opinie():
     id_firma_id = input("Podaj id firmy sposrob wyswietlonych")
     operations.wyswietlanie_opinii(id_firma_id)
 
-def zaloguj():
-    print("Zaloguj sie: ")
-    while 1:
-        login = input("Podaj login ")
-        haslo = input("Podaj haslo ")
-        iduzytkownika = operations.logowanie(str(login), str(haslo))
-        if (iduzytkownika is not None):
-            break
-        else:
-            print("Bledne dane, sprobuj jeszcze raz")
+# def zaloguj():
+#     print("Zaloguj sie: ")
+#     while 1:
+#         login = input("Podaj login ")
+#         haslo = input("Podaj haslo ")
+#         iduzytkownika = operations.logowanie(str(login), str(haslo))
+#         if (iduzytkownika is not None):
+#             break
+#         else:
+#             print("Bledne dane, sprobuj jeszcze raz")
 
 def wyswietl_ranking():
     print("Oto firmy istniejace w naszej bazie, wybierz interesujaca Cie: ")

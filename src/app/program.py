@@ -9,7 +9,17 @@ mycursor = mydb.cursor()
 
 def menu():
 
-    functions.zaloguj()
+    print("Zaloguj sie: ")
+    while 1:
+        login = input("Podaj login ")
+        haslo = input("Podaj haslo ")
+        iduzytkownika = operations.logowanie(str(login), str(haslo))
+        if (iduzytkownika is not None):
+            break
+        else:
+            print("Bledne dane, sprobuj jeszcze raz")
+
+
     print(("Co chcesz teraz zrobić? "))
     print("0 - wyjscie z programu")
     print("1 - obsluga uzytkownika")
@@ -45,7 +55,7 @@ def menu():
         temp = input("Wpisz cyfre: ")
 
         if temp == "1":
-            functions.dodaj_opinie()
+            functions.dodaj_opinie(iduzytkownika)
             menu()
         elif temp == "0":
             sys.exit(0)
