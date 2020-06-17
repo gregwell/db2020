@@ -59,7 +59,7 @@ def wyswietl_ranking():
     operations.ranking_fryzjerow(branza)
 
 def wyswietl_moje_opinie(iduzytkownika):
-    print("Moje opinie: [ocena, opis, nazwa firmy]")
+    print("Moje opinie: [id opinii, ocena, opis, nazwa firmy]")
     operations.moje_opinie(iduzytkownika)
 
 def usun_firme():
@@ -68,3 +68,8 @@ def usun_firme():
     idfirmy=input("Podaj id firmy: ")
     operations.usuwanie_firmy(idfirmy)
 
+def edytuj_opinie():
+    ido = input("Podaj id opinii")
+    opis = input("Prosze podac nowy opis")
+    gwiazdki = input("Prosze podac nowa liczbe gwiazdek")
+    operations.edytuj_o(ido, opis, gwiazdki)

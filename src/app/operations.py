@@ -91,7 +91,7 @@ def wyswietlanie_branz():
 
 def moje_opinie(iduzytkownika):
     mycursor = mydb.cursor()
-    sql = 'SELECT opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE opinie.UzytkownikID = %s'
+    sql = 'SELECT opinie.id_opinia, opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE opinie.UzytkownikID = %s'
     mycursor.execute(sql, iduzytkownika,)
     temp = mycursor.fetchall()
     for row in temp:
@@ -120,3 +120,12 @@ def ranking_uzytkownikow():
         print("")
         i=i+1
     mydb.commit()
+
+
+def edytuj_o(ido, opis, gwiazdki):
+    mycursor = mydb.cursor()
+    sql = "UPDATE opinie SET opis = %s, liczba_gwiazdek = %s WHERE id_opinia = %s"
+    args = (str(opis), str(gwiazdki), str(ido),)
+    mycursor.execute(sql, args)
+    mydb.commit()
+    mycursor.close()
