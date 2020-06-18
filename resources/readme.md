@@ -72,7 +72,7 @@ SELECT id_uzytkownik FROM uzytkownik WHERE login = %s AND haslo = %s
 
 #8. Wyswietlanie branz
 ```
-SELECT branza FROM firma
+SELECT branza FROM firma GROUP BY branza
 ```
 
 #9. Wyswietlanie wszystkich opinii zalogowanego uzytkownika
