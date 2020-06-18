@@ -20,7 +20,7 @@ SELECT opis, liczba_gwiazdek FROM opinie WHERE FirmaID = %s ORDER BY liczba_gwia
 SELECT id_uzytkownik FROM uzytkownik WHERE login = %s AND haslo = %s
 
 #8. Wyswietlanie branz
-SELECT branza FROM firma
+SELECT branza FROM firma GROUP BY branza
 
 #9. Wyswietlanie wszystkich opinii zalogowanego uzytkownika
 SELECT opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE opinie.UzytkownikID = %s

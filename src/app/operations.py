@@ -80,7 +80,7 @@ def logowanie(l_login, l_haslo):
 
 def wyswietlanie_branz():
     mycursor = mydb.cursor()
-    sql = "SELECT branza FROM firma"
+    sql = "SELECT branza FROM firma GROUP BY branza"
     mycursor.execute(sql)
     temp=mycursor.fetchall()
     for row in temp:
@@ -95,7 +95,7 @@ def moje_opinie(iduzytkownika):
     mycursor.execute(sql, iduzytkownika,)
     temp = mycursor.fetchall()
     for row in temp:
-        print(row[0], row[1], row[2])
+        print(row[0], row[1], row[2], row[3])
 
     mydb.commit()
     mycursor.close()
