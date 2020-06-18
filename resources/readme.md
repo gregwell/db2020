@@ -22,14 +22,15 @@
 <img src="/resources/bazadanychplik.png">
 
 Przykładowe tworzenie tabeli:
-
+```
+sql
 CREATE TABLE `firma` (
   `id_firma` int(11) NOT NULL,
   `nazwa` text COLLATE utf8_polish_ci NOT NULL,
   `branza` text COLLATE utf8_polish_ci NOT NULL,
   `miasto` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
-
+```
 
 ### Implementacja zapytań SQL
 W pliku zapytania.sql
