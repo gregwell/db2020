@@ -4,33 +4,37 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="", databas
 
 mycursor = mydb.cursor()
 
+
 def dodaj_uzytkownika(t_imie, t_nazwisko, t_login, t_haslo):
-   sql = "INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko, login, haslo)" \
-         "VALUES (%s, %s, %s, %s, %s)"
-   args = ("NULL", t_imie, t_nazwisko, t_login, t_haslo)
-   mycursor.execute(sql, args)
-   mydb.commit()
+    sql = "INSERT INTO uzytkownik (id_uzytkownik, imie, nazwisko, login, haslo)" \
+          "VALUES (%s, %s, %s, %s, %s)"
+    args = ("NULL", t_imie, t_nazwisko, t_login, t_haslo)
+    mycursor.execute(sql, args)
+    mydb.commit()
+
 
 def dodaj_firme(f_nazwa, f_branza, f_miasto):
-   sql = "INSERT INTO firma (id_firma, nazwa, branza, miasto)" \
-         "VALUES (%s, %s, %s, %s)"
-   args = ("NULL", f_nazwa, f_branza, f_miasto)
-   mycursor.execute(sql, args)
-   mydb.commit()
+    sql = "INSERT INTO firma (id_firma, nazwa, branza, miasto)" \
+          "VALUES (%s, %s, %s, %s)"
+    args = ("NULL", f_nazwa, f_branza, f_miasto)
+    mycursor.execute(sql, args)
+    mydb.commit()
+
 
 def dodawanie_opinii(o_liczba, o_opis, o_firma, o_uzytkownik):
     mycursor = mydb.cursor()
     sql = "INSERT INTO opinie (id_opinia, liczba_gwiazdek, opis, FirmaID, UzytkownikID)" \
-         "VALUES (%s, %s, %s, %s, %s)"
+          "VALUES (%s, %s, %s, %s, %s)"
     args = ("NULL", o_liczba, o_opis, o_firma, o_uzytkownik[0],)
     mycursor.execute(sql, args)
     mydb.commit()
+
 
 def wyswietlanie_firm():
     mycursor = mydb.cursor()
     sql = "SELECT id_firma, nazwa, branza, miasto FROM firma"
     mycursor.execute(sql)
-    temp=mycursor.fetchall()
+    temp = mycursor.fetchall()
     for row in temp:
         print(row[0], row[1])
 
@@ -38,6 +42,7 @@ def wyswietlanie_firm():
     mycursor.close()
     # mydb.close
     # return temp
+
 
 def wyswietlanie_opinii(idfirmy):
     mycursor = mydb.cursor()
@@ -52,15 +57,17 @@ def wyswietlanie_opinii(idfirmy):
     mydb.commit()
     mycursor.close()
 
+
 # tu mozna dodac zeby z user input wybierac branze
 def ranking_fryzjerow(branza):
     sql = "SELECT nazwa, AVG(liczba_gwiazdek) FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE firma.branza = %s GROUP BY nazwa ORDER BY liczba_gwiazdek DESC"
     args = (branza,)
     mycursor.execute(sql, args)
-    temp=mycursor.fetchall()
+    temp = mycursor.fetchall()
     for row in temp:
         print(row[0], row[1])
     mydb.commit()
+
 
 def logowanie(l_login, l_haslo):
     mycursor = mydb.cursor()
@@ -78,27 +85,30 @@ def logowanie(l_login, l_haslo):
 
     # mydb.close
 
+
 def wyswietlanie_branz():
     mycursor = mydb.cursor()
     sql = "SELECT branza FROM firma GROUP BY branza"
     mycursor.execute(sql)
-    temp=mycursor.fetchall()
+    temp = mycursor.fetchall()
     for row in temp:
         print(row[0])
 
     mydb.commit()
     mycursor.close()
 
+
 def moje_opinie(iduzytkownika):
     mycursor = mydb.cursor()
     sql = 'SELECT opinie.id_opinia, opinie.liczba_gwiazdek, opinie.opis, firma.nazwa FROM opinie INNER JOIN firma ON opinie.FirmaID=firma.id_firma WHERE opinie.UzytkownikID = %s'
-    mycursor.execute(sql, iduzytkownika,)
+    mycursor.execute(sql, iduzytkownika, )
     temp = mycursor.fetchall()
     for row in temp:
         print(row[0], row[1], row[2], row[3])
 
     mydb.commit()
     mycursor.close()
+
 
 def usuwanie_firmy(idfirma):
     mycursor = mydb.cursor()
@@ -108,17 +118,18 @@ def usuwanie_firmy(idfirma):
     mydb.commit()
     mycursor.close()
 
+
 def ranking_uzytkownikow():
     mycursor = mydb.cursor()
     sql = "SELECT `UzytkownikID`, COUNT(UzytkownikID) AS `liczba opinii tego uzytkownika` FROM `opinie` GROUP BY `UzytkownikID` ORDER BY `liczba opinii tego uzytkownika` DESC"
     mycursor.execute(sql)
-    temp=mycursor.fetchall()
-    i=1
+    temp = mycursor.fetchall()
+    i = 1
     for row in temp:
-        print(str(i)+" miejsce... ID uzytkownika:"+str(row[0]))
-        print("             liczba opinii:"+str(row[1]))
+        print(str(i) + " miejsce... ID uzytkownika:" + str(row[0]))
+        print("             liczba opinii:" + str(row[1]))
         print("")
-        i=i+1
+        i = i + 1
     mydb.commit()
 
 
